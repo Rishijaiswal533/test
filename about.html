@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #why-choose {
+      background-color: #10cdd3; /* Light teal background */
+      color: #ffffff; /* White text */
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    #why-choose h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .choose-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px; /* Space between items */
+      padding: 0 20px;
+    }
+
+    .choose-item {
+      max-width: 20%; /* Default to 4 items per row */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .choose-item img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
+    }
+
+    .choose-item h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .choose-item p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #f0f0f0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .choose-item {
+        max-width: 33.33%; /* 3 items per row on medium screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .choose-item {
+        max-width: 50%; /* 2 items per row on small screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .choose-item {
+        max-width: 100%; /* 1 item per row on extra small screens */
+      }
+    }
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+      .about-us-image {
+        margin-left: 5%;
+        height: 200px;
+      }
+      .about-us-title {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+      .about-us-title {
+        margin-left: 4%;
+        font-size: 4vh;
+        color: #007e8f;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      /* Paragraph Text */
+      .about-us-text {
+        margin-top: 5%;
+        margin-left: 4%;
+        font-size: 2.5vh;
+        color: rgb(0, 0, 0);
+        margin-bottom: 15px;
+        line-height: 1.8;
+      }
+    }
+    .about-us-image {
+      position: relative;
+      width: 90%;
+      height: 50vh;
+      margin: auto;
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .about-us-image img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 5%;
+    }
+
+    .about-us-img-1 {
+      top: 10%;
+      left: 5%;
+      width: 40%;
+      height: 150%;
+    }
+
+    .about-us-img-2 {
+      top: 30%;
+      left: 40%;
+      width: 50%;
+      height: 20%;
+    }
+
+    .about-us-img-3 {
+      top: 50%;
+      left: 70%;
+      width: 20%;
+      height: 30%;
+    }
+
+    .about-us-img-4 {
+      margin-top: 5%;
+      left: 5%;
+      width: 40%;
+      height: 150%;
+      height: 30%;
+    }
+
+    .about-us-img-5 {
+      top: 60%;
+      left: 20%;
+      width: 30%;
+      height: 40%;
+    }
+
+    #about-us-c {
+      height: fit-content;
+      background-color: transparent;
+      display: flex;
+      justify-content: center; /* Aligns content vertically in the center */
+      align-items: center; /* Aligns content horizontally in the center */
+      margin: 0%;
+    }
+    /* Title */
+    .about-us-title {
+      margin-left: 4%;
+      font-size: 2.2rem;
+      color: #007e8f;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    /* Paragraph Text */
+    .about-us-text {
+      margin-top: 5%;
+      margin-left: 4%;
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    /* Image Section */
+    .about-us-image {
+      background-image: url('bg1.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative; /* Required for positioning the rectangles inside */
+    }
+
+    .rectangle {
+      position: absolute;
+      background-color: rgba(135, 135, 135, 0.2); /* Semi-transparent color */
+      border-radius: 5px;
+      z-index: -1; /* Ensure rectangles are behind the image */
+    }
+
+    /* Rectangle 1 */
+    .rectangle-1 {
+      top: -10%;  /* Position from the top */
+      left: -10%; /* Position from the left */
+      width: 80%; /* Width of the rectangle */
+      height: 90%; /* Height of the rectangle */
+    }
+
+    /* Rectangle 2 */
+    .rectangle-2 {
+      top: 20%;  /* Position from the top */
+      left: 50%; /* Position from the left */
+      width: 55%; /* Width of the rectangle */
+      height: 60%; /* Height of the rectangle */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- About Section -->
+  <section id="about-us" class="about-us-section" style="margin-top:5% ;">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Image with Rectangles -->
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          <div class="about-us-image">
+            <!-- Rectangle 1 -->
+            <div class="rectangle rectangle-1"></div>
+            <!-- Rectangle 2 -->
+            <div class="rectangle rectangle-2"></div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="col-12 col-md-6">
+          <div class="about-us-content">
+            <h1 class="about-us-title" style="   font-family: 'Times New Roman', Times, serif;">About Us</h1>
+            <p class="about-us-text" style="   font-family: 'Times New Roman', Times, serif;">
+              Since 1995, Sawla Stone Industries has been a trusted name in manufacturing and supplying premium-quality Kota stones, Kota stone tiles, Red Mandana stones, and other building materials. Known for their durability, fine textures, and glossy finish, our products are designed to meet international quality standards.
+            </p>
+            <p class="about-us-text" style="   font-family: 'Times New Roman', Times, serif;">
+              Whether it's rough or polished blue and brown Kota stones or specialized tiles, we ensure high compressive strength and low water absorption, making them perfect for a wide range of applications. We take pride in offering top-notch products at competitive prices to meet the diverse needs of our clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about-us-facility" class="about-us-section-f" style="margin-top:5% ;">
+    <div class="row align-items-center">
+      <!-- Left Content -->
+      <div class="col-12 col-md-6">
+        <div class="about-us-content">
+          <h1 class="about-us-title" style="   font-family: 'Times New Roman', Times, serif;">Our Facility</h1>
+          <p class="about-us-text" style="   font-family: 'Times New Roman', Times, serif;">
+            Located on a vast 15,000 sq. meter site, our facility is equipped with cutting-edge technology. We utilize eight stone cutter machines, eleven edge cutting machines, ten manual polishing machines, one calibration cum polishing machine, and an automatic line polish machine for tiles. Our infrastructure ensures precision, quality, and efficiency in every product we deliver.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Images -->
+      <div class="col-12 col-md-6 mb-4 mb-md-0">
+        <div class="about-us-image1">
+          <img src="./bg1.jpg" class="about-us-img-1" alt="Image 1">
+          <img src="./bg1.jpg" class="about-us-img-2" alt="Image 2">
+          <img src="./bg1.jpg" class="about-us-img-3" alt="Image 3">
+          <img src="./bg1.jpg" class="about-us-img-4" alt="Image 4">
+          <img src="./bg1.jpg" class="about-us-img-5" alt="Image 5">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="why-choose" style="margin-top: 5%;">
+    <h2 style="   font-family: 'Times New Roman', Times, serif;">Why Choose Us?</h2>
+    <div class="choose-container">
+      <!-- Item 1 -->
+      <div class="choose-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828970.png" alt="Satisfaction Icon">
+        <h4 style="   font-family: 'Times New Roman', Times, serif;">Voices of Satisfaction</h4>
+        <p style="   font-family: 'Times New Roman', Times, serif;">Partnering with Sawla Stones was the best decision! Their stone quality and exceptional service exceeded all our expectations.</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="choose-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828979.png" alt="Quality Icon">
+        <h4 style="   font-family: 'Times New Roman', Times, serif;">Unwavering Quality</h4>
+        <p style="   font-family: 'Times New Roman', Times, serif;">For 29 years, we've built our legacy on trust and quality. Every stone is carefully inspected to ensure you receive only the best.</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="choose-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/2082/2082040.png" alt="Competitive Edge">
+        <h4 style="   font-family: 'Times New Roman', Times, serif;">Competitive Edge</h4>
+        <p style="   font-family: 'Times New Roman', Times, serif;">We ensure top-quality stones at prices that offer you the best value for your investment.</p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="choose-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="Innovation Icon">
+        <h4 style="   font-family: 'Times New Roman', Times, serif;">Innovative at Heart</h4>
+        <p style="   font-family: 'Times New Roman', Times, serif;">We’re always evolving. By using the latest stone processing technology, we make sure our products stay a step ahead.</p>
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>

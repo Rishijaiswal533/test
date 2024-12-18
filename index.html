@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="responsive-cart-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Cart with Drawer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Scope styles to this page only using the .responsive-cart-page class */
+    .responsive-cart-page html, .responsive-cart-page body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    /* Top bar styling */
+    .responsive-cart-page .navbar {
+      height: 80px;
+      font-size: 1rem;
+      background-color: white !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1050;
+    }
+
+    /* Logo Styling */
+    .responsive-cart-page .navbar-brand img {
+      height: 60px; /* Adjust logo size */
+    }
+
+    /* Centered Navigation Menu */
+    .responsive-cart-page .navbar-nav {
+      margin: auto;
+    }
+
+    .responsive-cart-page .nav-link {
+      color: #008b8b !important;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      margin: 5px 10px;
+    }
+
+    .responsive-cart-page .nav-link:hover {
+      color: #005f5f !important;
+    }
+
+    /* General Body Styling */
+    .responsive-cart-page body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Smooth Scrolling */
+    .responsive-cart-page html {
+      scroll-behavior: smooth;
+    }
+
+    /* Cart Icon Styling */
+    .responsive-cart-page .cart-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .responsive-cart-page .cart-icon img {
+      height: 40px;
+    }
+
+    .responsive-cart-page .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background-color: rgb(241, 143, 52);
+      color: white;
+      font-size: 0.79rem;
+      padding: 2px 5px;
+      border-radius: 40%;
+    }
+
+    /* Offcanvas Navigation Drawer */
+    .responsive-cart-page .offcanvas {
+      margin-top: 80px !important; /* Removes top margin */
+      width: 100% !important;   /* Full-screen width */
+    }
+
+    .responsive-cart-page .offcanvas-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Hide Cart in Top Bar on Small Screens */
+    @media (max-width: 991px) {
+      .responsive-cart-page .cart-icon-top {
+        display: none;
+      }
+    }
+
+    /* Show Cart in Drawer on Small Screens */
+    @media (max-width: 991px) {
+      .responsive-cart-page .cart-icon-drawer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Hide Cart in Drawer on Large Screens */
+    @media (min-width: 992px) {
+      .responsive-cart-page .cart-icon-drawer {
+        display: none;
+      }
+    }
+
+    /* Full height for content sections */
+    .responsive-cart-page .section {
+      height: fit-content;
+      width: fit-content;
+    }
+
+    /* Style for the sections to make them look neat */
+    .responsive-cart-page .section-content {
+      font-size: 1.5rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (Scrolls with the page) -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="logo1.png" alt="Logo">
+      </a>
+
+      <!-- Hamburger Menu -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links (Visible on Larger Screens) -->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Cart Icon (Visible Only on Larger Screens) -->
+      <div class="cart-icon cart-icon-top">
+        <img src="cart.jpg" alt="Cart">
+        <span class="cart-badge">3</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Navigation Drawer -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Cart Icon in Drawer (Visible on Small Screens) -->
+      <div class="cart-icon cart-icon-drawer">
+        <img src="cart.jpg" alt="Cart">
+        <span class="cart-badge">0</span>
+      </div>
+
+      <!-- Drawer Navigation Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home" data-bs-dismiss="offcanvas">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" data-bs-dismiss="offcanvas">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery" data-bs-dismiss="offcanvas">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products" data-bs-dismiss="offcanvas">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Content Sections -->
+  <div id="home" class="section">
+    <div class="section-content">Loading Home...</div>
+  </div>
+  <div id="about" class="section">
+    <div class="section-content">Loading About...</div>
+  </div>
+  <div id="gallery" class="section">
+    <div class="section-content">Loading Gallery...</div>
+  </div>
+  <div id="products" class="section">
+    <div class="section-content">Loading Products...</div>
+  </div>
+  <div id="contact" class="section">
+    <div class="section-content">Loading Contact...</div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript to Fetch Content and Close Drawer -->
+  <script>
+    function loadContent(url, elementId) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => {
+          document.getElementById(elementId).innerHTML = "Error loading content.";
+          console.error("Error loading " + url, error);
+        });
+    }
+
+    // Load content dynamically
+    loadContent('home.html', 'home');
+    loadContent('about.html', 'about');
+    loadContent('gallery.html', 'gallery');
+    loadContent('products.html', 'products');
+    loadContent('contact.html', 'contact');
+
+    // Smoothly scroll to the section and close the drawer
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', event => {
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close the offcanvas menu
+        const offcanvasElement = document.querySelector('.offcanvas.show');
+        if (offcanvasElement) {
+          const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+          offcanvasInstance.hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Offer Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  /* General Reset */
+
+
+/* Unique Form Section */
+.custom-form-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #00A9B7;
+  color: #fff;
+  padding: 0px;
+  height: 100%;
+}
+
+.custom-form-left, .custom-form-right {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Equalize the height */
+}
+
+.custom-form-left label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.custom-form-left input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid black; /* Black border */
+  border-radius: 4px;
+}
+
+.custom-submit-btn {
+  background-color: #fff;
+  color: #00A9B7;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-submit-btn:hover {
+  background-color: #ddd;
+}
+
+.custom-form-right h2 {
+  font-size: 1.8rem;
+  margin-bottom: px;
+}
+
+.custom-form-right p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Unique Footer Section */
+.custom-footer {
+  background-color: #E0F4FA;
+  padding: 30px;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.custom-footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.custom-footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.custom-footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #00A9B7;
+}
+
+.custom-footer-section p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.custom-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.custom-footer-bottom p {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-form-container {
+      flex-direction: column;
+  
+  }
+
+  .custom-form-right,
+  .custom-form-left {
+    
+      
+      text-align: center;
+  }
+
+  .custom-footer-container {
+      flex-direction: column;
+      
+      align-items: center;
+      text-align: center;
+  }
+}
+
+</style>
+<body>
+    <!-- Unique Form Section -->
+    <div class="custom-form-container" style="height:fit-content; margin-top:10%">
+        <div class="custom-form-left" >
+            <form>
+                <label for="custom-name">Name*</label>
+                <input type="text" id="custom-name" placeholder="" required>
+                
+                <label for="custom-phone">Phone*</label>
+                <input type="text" id="custom-phone" placeholder="" required>
+                
+                <label for="custom-message">Comment Or Message*</label>
+                <input type="text" id="custom-message" placeholder="" required>
+                
+                <button type="submit" class="custom-submit-btn" style="margin-top: 5%; height:40px; border: 1 px solid black">SUBMIT</button>
+            </form>
+        </div>
+        <div class="custom-form-right" style="background-color: white; ">
+            <h2 style="color:  #00A9B7; margin-top:10%; margin-left:10%;">Lets Complete This<br> Form To Get <br> Custom Offer <p style="text-align: left; margin-top:4%;" >
+              Input your query about anything <br> related to our products and it will be <br>resolved within the next 24 hours.
+          </p></h2>
+            
+        </div>
+    </div>
+
+    <!-- Unique Footer Section -->
+    <footer class="custom-footer">
+        <div class="custom-footer-container">
+            <!-- About Section -->
+            <div class="custom-footer-section">
+                <h3 style="color: black;text-align: left;">Sawla Stone Industries </h3>
+                <h9 style="text-align: left;">
+                  The advantage of hiring a workspace <br> with us is that it gives you comfortable <br> service and all-around facilities.
+              </h9>
+            </div>
+            <!-- Types of Stones -->
+            <div class="custom-footer-section">
+                <h3 style="text-align: left;">Types of Kota Stones</h3>
+                <p style="text-align: left;"><i>Kota Stone Blue</i></p>
+                <p style="text-align: left;"><i>Kota Stone Brown</i></p>
+                <p style="text-align: left;"><i>Red Mandana Stone</i></p>
+                <p style="text-align: left;"><i>Kota Stone Tiles</i></p>
+            </div>
+            <!-- Contact Us -->
+            <div class="custom-footer-section">
+                <h3 style="text-align: left;">Contact Us</h3>
+                <p style="text-align: left;"><b>07459-220690</b></p>
+                <p style="text-align: left;">+91 98290 39690</p>
+                <p style="text-align: left;">+91 97992 35966</p>
+                <p style="text-align: left;">sawlastoneindustries@gmail.com</p>
+            </div>
+            <!-- Locate Us -->
+            <div class="custom-footer-section">
+                <h3 style="text-align: left;">Locate Us</h3>
+                <p style="text-align: left;"><b>Site Address:</b> Industrial Area, Kudayala, Ramganjmandi, Kota, Rajasthan-326519</p>
+                <p style="text-align: left;"><b>Office Address:</b> Bazar No.1, Near Railway Station, Ramganjmandi, Kota, Rajasthan-326519</p>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="custom-footer-bottom">
+            <p>Copyright © 2021</p>
+            <p>Terms & Conditions | Privacy Policy</p>
+        </div>
+    </footer>
+</body>
+</html>

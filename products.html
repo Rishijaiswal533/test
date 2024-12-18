@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2x2 Grid Layout</title>
+  <style>
+    /* General Section Styling */
+.serve-section {
+  margin: 0;
+  
+  padding: 0;
+  background-color: #ffffff;
+}
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 20px; /* Smaller gap between items */
+  }
+}
+.section-title {
+  color: #2b99c1;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.serve-description {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #555;
+  text-align: left;
+}
+
+/* Title Section Styling */
+.serve-title-section {
+  background-color: #2bb3c2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  border-radius: 0 10px 10px 0;
+  height: 100%;
+}
+
+/* Card Styling */
+.card-serve {
+  background-color: #eaf8fb;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-serve:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #2bb3c2;
+}
+
+.card-title {
+  color: #2b99c1;
+  font-weight: bold;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .serve-title-section {
+      border-radius: 0; /* Remove radius on smaller screens */
+      text-align: center;
+      padding: 20px;
+  }
+  .serve-description {
+      text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-serve {
+      margin-bottom: 20px;
+  }
+
+  .serve-section {
+      height: auto;
+      padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+      font-size: 1.5rem;
+  }
+  .serve-description {
+      font-size: 0.9rem;
+  }
+}
+    /* Styles for a full-screen, fluid container */
+    .full-screen-container {
+      width: 100%;  /* 100% of the viewport width */
+      height: 100%; /* 100% of the viewport height */
+      margin: 0;     /* Remove default margins */
+      padding: 0;    /* Remove default padding */
+      display: flex; /* Optional: allows you to use flexbox for inner elements */
+      justify-content: center; /* Optional: centers content horizontally */
+      align-items: center; /* Optional: centers content vertically */
+      flex-direction: column; /* Align content vertically */
+    }
+
+    /* Style for the heading */
+    h1 {
+      text-align: center;
+      color: skyblue; /* Sky blue color for the heading */
+      margin: 20px 0; /* Add some space around the heading */
+    }
+
+    /* Style for the paragraph */
+    p {
+      
+      text-align: center;
+      color: black; /* Black color for the paragraph */
+      margin: 0 0 20px 0; /* Add space below the paragraph */
+    }
+
+    /* Grid layout for the container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+      grid-template-rows: repeat(2, 1fr);    /* 2 rows with equal height */
+      gap: 40px;  /* Reduced space between grid items */
+      width: 80%;  
+      height: 40%; 
+    }
+
+    /* Style for each grid item */
+    .grid-item {
+      height:auto;
+      border-radius: 2%;
+      display: flex;
+      flex-direction: column; /* Stack the content vertically */
+      justify-content: space-between; /* Distribute space between items */
+      align-items: center;
+      background-color: #d3edf0; /* Light gray background */
+      border: 1px solid #ccc;    /* Border for visibility */
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* Style for the image */
+    .grid-item img {
+      width: 100%; /* Make the image take the full width of the grid item */
+      height: 200px; /* Set the height of the image */
+      object-fit: cover; /* Ensure the image covers the area without distortion */
+      border-radius: 8px;
+    }
+
+    /* Style for the heading inside grid item */
+    .grid-item h3 {
+
+      font-size: 2rem;
+      font-weight: bold; /* Make the heading bold */
+      color: rgb(81, 193, 237);
+      margin: 0; /* Remove margin between heading and paragraph */
+    }
+
+    /* Style for the paragraph inside grid item */
+    .grid-item p {
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+      margin: 0; /* Ensure no space between heading and paragraph */
+    }
+
+    /* Responsive design: Stack grid items in a single column on small screens */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr; /* 1 column */
+        width: 90%;  /* Increase container width on small screens */
+        height: 90%; /* Increase container height on small screens */
+      }
+
+      .grid-item {
+
+        padding: 50px;  /* Less padding on small screens */
+      }
+      
+    /* Hide the container in small screens */
+@media (max-width: 768px) {
+  .container-fluid.serve-section {
+    display: none; /* Hide the section */
+  }
+}
+
+/* Optionally for very small screens (like phones in portrait mode) */
+@media (max-width: 480px) {
+  .container-fluid.serve-section {
+    display: none; /* Hide the section */
+  }
+}
+
+    }
+  </style>
+</head>
+<body>
+  <br> <br>
+  <h1>Our Products</h1>
+  <p>Kota Stone is a highly popular and versatile natural stone, widely used for wall cladding, flooring, building facades, and paving.<br> Known for its durability and strength, it’s a top choice for both residential and commercial projects.</p>
+  <br>
+  <div class="full-screen-container">
+    <!-- Grid container with 2 rows and 2 columns -->
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="./bg1.jpg" alt="Image 1">
+        <h3 style="margin: 5%;">Kota Stone Blue</h3>
+    
+        <p>Renowned for its strength and subtle blue shades, Kota Blue Stone is ideal for flooring and wall cladding, offering durability and a refined, natural look to any space.</p>
+      </div>
+      <div class="grid-item">
+        <img src="./bg1.jpg" alt="Image 2">
+        <h3 style="margin: 5%;">Kota Stone Brown</h3>
+        <p>Featuring rich brown tones, Kota Brown Stone adds a warm, earthy elegance to floors and walls, combining aesthetic appeal with exceptional strength for long-lasting construction solutions.</p>
+      </div>
+      <div class="grid-item">
+        <img src="./bg1.jpg" alt="Image 3">
+        <h3 style="margin: 5%;">Red Mandana Stone</h3>
+        <p>Red Mandana Stone offers striking red hues and excellent durability, perfect for adding a bold, vibrant look to both interior and exterior spaces, with its unique texture and resilience.</p>
+      </div>
+      <div class="grid-item">
+        <img src="./bg1.jpg" alt="Image 4">
+        <h3 style="margin: 5%;">Kota Stone Tiles</h3>
+        <p>Kota Stone Tiles provide a versatile, durable flooring solution with natural charm. Their smooth finish and variety of shades make them perfect for enhancing both modern and traditional spaces.</p>
+      </div>
+    </div>
+  </div>
+<br><br><br><br>
+  <div class="container-fluid serve-section" style="height: 80vh;">
+    <div class="row gy-4">
+        <!-- First Grid - Title Section -->
+        <div class="col-2" style="width: 20% ; height:400px;   background-color:rgb(7, 134, 173) ;  border-radius: 10px;" >
+            <div class="serve-title text-center">
+                <h2 style="color:white; margin-top:70px;">Whom We Serve?</h2>
+                <p class="serve-description" style="text-align: left; margin-left:15px ;color:white;">
+                    At Sawla Stones, our customers are as diverse as our range of Kota Stone. Here’s a glimpse of who benefits the most from our premium stone selection:
+                </p>
+            </div>
+        </div>
+
+        <!-- Traders Card -->
+        <div class="col-md-3 col-sm-6" style="width: 23%; padding-bottom:5%; margin-left: 3%;" >
+            <div class="card-serve">
+                <div class="card-icon">&#128203;</div> <!-- Placeholder for icon -->
+                <h4 style="color: #2bb3c2;">Traders</h4>
+                <p style=" font-size: 0.9rem;
+                margin-top: 10px;">
+                For traders and wholesalers
+                partnering with Sawla Stones
+                means trust and growth. With top.
+                quality Kota Stone, timely
+                deliveries, and a wide range, you
+                can confidently expand your
+                market and meet client needs.   </p>
+            </div>
+        </div>
+
+        <!-- Builders Card -->
+        <div class="col-md-3 col-sm-6" style="width: 23%; padding-top:5%;margin-left: 3%; ">
+            <div class="card-serve">
+                <div class="card-icon">&#128119;</div> <!-- Placeholder for icon -->
+                <h4 style="color: #2bb3c2;">Builders</h4>
+                <p style=" font-size: 0.9rem;
+                margin-top: 10px;">
+                In the competitive construction
+                world, quality is kev. Sawla Stones
+                offers premium Kota Stone with
+                durability and timeless appeal,
+                helping builders deliver lasting
+                structures and boost their
+                reputation.   </p>
+            </div>
+        </div>
+
+        <!-- Architects Card -->
+        <div class="col-md-3 col-sm-6" style="width: 23%; padding-bottom:5%;margin-left: 3%;">
+            <div class="card-serve">
+                <div class="card-icon">&#128736;</div> <!-- Placeholder for icon -->
+                <h4 style="color: #2bb3c2;">Architects</h4>
+                <p style=" font-size: 0.9rem;
+                margin-top: 10px;">
+                At Sawla Stones, we offer a wide
+                range of designs, finishes, and
+                colors, making us the top choice for
+                architects and designers. Our Kota
+                Stone varieties effortlessly bring
+                creative visions to life.  </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
