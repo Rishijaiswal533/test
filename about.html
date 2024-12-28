@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us</title>
   <style>
+    
     * {
       margin: 0;
       padding: 0;
@@ -205,32 +206,42 @@
       z-index: -1; /* Ensure rectangles are behind the image */
     }
 
-    /* Rectangle 1 */
-    .rectangle-1 {
-      top: -10%;  /* Position from the top */
-      left: -10%; /* Position from the left */
-      width: 80%; /* Width of the rectangle */
-      height: 90%; /* Height of the rectangle */
-    }
+   /* Rectangle 1 */
+.rectangle-1 {
+  position: absolute; /* Ensure it can be layered */
+  z-index: 10; /* Set to a high value to appear on top */
+  color: #007e8f;
+  top: -10%; /* Position from the top */
+  left: -10%; /* Position from the left */
+  width: 80%; /* Width of the rectangle */
+  height: 90%; /* Height of the rectangle */
+}
 
-    /* Rectangle 2 */
-    .rectangle-2 {
-      
-      top: 20%;  /* Position from the top */
-      left: 50%; /* Position from the left */
-      width: 55%; /* Width of the rectangle */
-      height: 60%; /* Height of the rectangle */
-    }
+/* Rectangle 2 */
+.rectangle-2 {
+  position: absolute; /* Ensure it can be layered */
+  z-index: 10; /* Same z-index to align with Rectangle 1 */
+  color: #007e8f;
+  top: 20%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  width: 55%; /* Width of the rectangle */
+  height: 60%; /* Height of the rectangle */
+}
+@media (max-width: 767px) {
+  .responsive-div {
+    width: 90% !important;
+  }
+}
 
   </style>
 </head>
 <body>
   <!-- About Section -->
-  <section id="about-us" class="about-us-section" style="margin-top:5% ;">
-    <div class="container">
-      <div class="row align-items-center">
+  <section id="about-us" class="about-us-section" >
+    <div class="container" >
+      <div class="row align-items-center" >
         <!-- Left Image with Rectangles -->
-        <div class="col-12 col-md-6 mb-4 mb-md-0">
+        <div class="col-12 col-md-6 mb-4 mb-md-0" style="margin-top: 8%;">
           <div class="about-us-image">
             <!-- Rectangle 1 -->
             <div class="rectangle rectangle-1"></div>
@@ -240,7 +251,7 @@
         </div>
 
         <!-- Right Content -->
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6" style="margin-top: 8%;"">
           <div class="about-us-content">
             <h1 class="about-us-title" style="   font-family: 'Times New Roman', Times, serif;">About Us</h1>
             <p class="about-us-text" style="   font-family: 'Times New Roman', Times, serif; text-align: left;">
@@ -254,20 +265,20 @@
       </div>
     </div>
   </section>
-  <section id="about-us-facility" class="about-us-section-f" style="margin-top:5% ;">
+  <section id="about-us-facility" class="about-us-section-f" >
     <div class="row align-items-center">
       <!-- Left Content -->
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 responsive-div" style="margin-top: 5%; width: 45%; margin-left: 2%;">
         <div class="about-us-content">
-          <h1 class="about-us-title" style="   font-family: 'Times New Roman', Times, serif;">Our Facility</h1>
-          <p class="about-us-text" style="   font-family: 'Times New Roman', Times, serif; text-align: left;">
+          <h1 class="about-us-title" style="font-family: 'Times New Roman', Times, serif;">Our Facility</h1>
+          <p class="about-us-text" style="font-family: 'Times New Roman', Times, serif; text-align: left;">
             Located on a vast 15,000 sq. meter site, our facility is equipped with cutting-edge technology. We utilize eight stone cutter machines, eleven edge cutting machines, ten manual polishing machines, one calibration cum polishing machine, and an automatic line polish machine for tiles. Our infrastructure ensures precision, quality, and efficiency in every product we deliver.
           </p>
         </div>
       </div>
-
+  
       <!-- Right Images -->
-      <div class="col-12 col-md-6 mb-4 mb-md-0">
+      <div class="col-12 col-md-6 mb-4 mb-md-0" style="margin-left: 3%;margin-top: 5%;">
         <div class="about-us-image1">
           <img src="./bg1.jpg" class="about-us-img-1" alt="Image 1">
           <img src="./bg1.jpg" class="about-us-img-2" alt="Image 2">
@@ -278,6 +289,7 @@
       </div>
     </div>
   </section>
+  
   <section id="why-choose" style="margin-top: 5%;">
     <h2 style="   font-family: 'Times New Roman', Times, serif;">Why Choose Us?</h2>
     <div class="choose-container">

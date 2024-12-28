@@ -114,25 +114,33 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .custom-form-container {
-      flex-direction: column;
-  
+    flex-direction: column;
   }
 
-  .custom-form-right,
-  .custom-form-left {
-    
-      
-      text-align: center;
+  .custom-form-left,
+  .custom-form-right {
+    text-align: left;
+  }
+
+  .custom-form-right h2,
+  .custom-form-right p {
+    text-align: left;
   }
 
   .custom-footer-container {
-      flex-direction: column;
-      
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .custom-footer-section {
+    text-align: left;
+  }
+
+  .custom-footer-bottom {
+    text-align: left;
   }
 }
-
 </style>
 <body>
     <!-- Unique Form Section -->
@@ -148,7 +156,7 @@
                 <label for="custom-message">Comment Or Message*</label>
                 <input type="text" id="custom-message" placeholder="" required>
                 
-                <button type="submit" class="custom-submit-btn" style="margin-top: 5%; height:40px; border: 1 px solid black">SUBMIT</button>
+                <button type="submit" class="custom-submit-btn" style="margin-top: 5%; height:40px; border: 1px solid black">SUBMIT</button>
             </form>
         </div>
         <div class="custom-form-right" style="background-color: white; ">
